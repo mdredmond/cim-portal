@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CIM Portal – Create Account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 520px;
+            margin: auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 32px;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 0.95rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .checkbox-group label {
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+
+        .submit-btn {
+            margin-top: 24px;
+            width: 100%;
+            padding: 12px;
+            background: #2563eb;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .submit-btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        .disclaimer {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Create Your Security Portal Account</h1>
+
+    <form>
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input id="name" type="text" placeholder="John Smith">
+        </div>
+
+        <div class="form-group">
+            <label for="business">Business Name</label>
+            <input id="business" type="text" placeholder="Smith Security Services">
+        </div>
+
+        <div class="form-group">
+            <label for="address">Business Address</label>
+            <input id="address" type="text" placeholder="123 Main St, Denton, TX 76201">
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">Mobile Phone Number</label>
+            <input id="mobile" type="tel" placeholder="(555) 123-4567">
+            <div class="checkbox-group">
+                <input id="smsOptIn" type="checkbox">
+                <label for="smsOptIn">
+                    I agree to receive account-related text messages from the Security Portal.  These messages may include security alerts and messages related to device status.   Message frequency varies. Message & data rates may apply. Reply STOP to opt out. 
+					<a href="www.google.com">Privacy Policy</a> & <a href="www.google.com">Terms</a>.
+                </label>
+				
+            </div>
+        </div>
+
+        <button id="createBtn" class="submit-btn" type="button" disabled>
+            Create Account
+        </button>
+
+     
+    </form>
+</div>
+
+<script>
+    const checkbox = document.getElementById('smsOptIn');
+    const button = document.getElementById('createBtn');
+
+    checkbox.addEventListener('change', () => {
+        button.disabled = !checkbox.checked;
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
